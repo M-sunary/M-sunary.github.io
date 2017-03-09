@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 生计 | Naive.yu.sun</title>
+  <title>Leetcode修炼之路-01 | Naive.yu.sun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="I can fly when I was child.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Naive.yu.sun">
-<meta property="og:url" content="http://yoursite.com/tags/生计/index.html">
+  <meta name="description" content="题目：Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution, and you may not use the sam">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode修炼之路-01">
+<meta property="og:url" content="http://yoursite.com/2017/02/10/Leetcode修炼之路-01/index.html">
 <meta property="og:site_name" content="Naive.yu.sun">
-<meta property="og:description" content="I can fly when I was child.">
+<meta property="og:description" content="题目：Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution, and you may not use the sam">
+<meta property="og:updated_time" content="2017-03-09T16:53:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Naive.yu.sun">
-<meta name="twitter:description" content="I can fly when I was child.">
+<meta name="twitter:title" content="Leetcode修炼之路-01">
+<meta name="twitter:description" content="题目：Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution, and you may not use the sam">
   
     <link rel="alternative" href="/atom.xml" title="Naive.yu.sun" type="application/atom+xml">
   
@@ -168,74 +172,61 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Leetcode修炼之路-01" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/11/Leetcode修炼之路-02/" class="archive-article-date">
-  	<time datetime="2017-02-11T15:54:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/11/Leetcode修炼之路-02/">Leetcode修炼之路-02</a>
+    <h1 class="article-title" itemprop="name">
+      Leetcode修炼之路-01
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/10/Leetcode修炼之路-01/" class="archive-article-date">
+        
+        <a href="/2017/02/10/Leetcode修炼之路-01/" class="archive-article-date">
   	<time datetime="2017-02-09T16:33:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-10</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/10/Leetcode修炼之路-01/">Leetcode修炼之路-01</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>题目：Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+<p>题目大意：给定一个整数数组，返回数组中两个数的索引，使它们相加等于目标数。</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Given nums = [2, 7, 11, 15], target = 9,</div><div class="line">Because nums[0] + nums[1] = 2 + 7 = 9,</div><div class="line">return [0, 1].</div></pre></td></tr></table></figure>
+<p>代码实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">package com.yu.sun.leetcode.palindrome;</div><div class="line"></div><div class="line">import java.util.HashMap;</div><div class="line">import java.util.Map;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 给定一个整型数组 和 一个目标值，</div><div class="line"> * 从数组中找出两个值相加等于目标值(Target)，返回这两个值的索引(Indices)</div><div class="line"> * 思路：</div><div class="line"> * step1:定义一个长度为2的数组来存储&quot;符合要求的数组索引&quot;,该数组称作 结果集，int[] resultArr = new int[2];</div><div class="line"> * 		 定义一个map用来存放数组的值和索引，key = arr[index], value =index, </div><div class="line"> *       这么做是为了利用map.containsKey()这个函数来找剩下的一个值</div><div class="line"> * step2:依次取出源数组sourceArr[]中的值，如果当前值 x 比目标值 target 小,</div><div class="line"> *       则将当前值的索引放到结果集中,即resultArr[0] = i;</div><div class="line"> * step3:在循环中利用map.containsKey()的函数找寻剩下另一个符合 target-nums[i]的值。</div><div class="line"> * step4:如果找到直接return,没找到继续循环，直至结束</div><div class="line"> * @author yu.sun</div><div class="line"> *</div><div class="line"> */</div><div class="line">public class IndicesToTarget &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		int nums[] = &#123;3,2,4&#125;;</div><div class="line">		int target = 7;</div><div class="line">		IndicesToTarget indicesToTarget = new IndicesToTarget();</div><div class="line">		System.out.println(indicesToTarget.twoSum(nums, target)[0]);</div><div class="line">		System.out.println(indicesToTarget.twoSum(nums, target)[1]);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	</div><div class="line">	public int[] twoSum(int[] nums, int target) &#123;</div><div class="line">			int[] retArr = new int[2];</div><div class="line">			Map&lt;Integer,Integer&gt; map = new HashMap&lt;Integer,Integer&gt;();</div><div class="line">			for(int i=0;i&lt;nums.length;i++)&#123;</div><div class="line">				if(map.containsKey(target - nums[i]))&#123;</div><div class="line">					retArr[0] = i;</div><div class="line">					retArr[1] = map.get(target - nums[i]);</div><div class="line">					return retArr;</div><div class="line">				&#125;</div><div class="line">				map.put(nums[i], i);</div><div class="line">				</div><div class="line">			&#125;</div><div class="line">			return retArr;</div><div class="line">	    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -247,19 +238,92 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/02/10/Leetcode修炼之路-01/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/02/11/Leetcode修炼之路-02/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Leetcode修炼之路-02
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -282,9 +346,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
