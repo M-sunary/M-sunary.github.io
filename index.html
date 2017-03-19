@@ -190,14 +190,91 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><code>重写与重载之间的区别</code></p>
-<p><table></table></p>
-<p><th></th></p>
-<p><td>区别点</td></p>
-<p><td>重载方法</td></p>
-<p><td>重写方法</td><br></p>
-<tr><br><td>参数列表</td><td>必须修改</td><td>一定不能修改</td></tr><br><tr><td>返回类型</td><td>可以修改</td><td>一定不能修改</td></tr><br><tr><td>异常</td><td>可以修改</td><td>可以减少或删除，一定不能抛出新的或者更广的异常</td></tr><br><tr><td>访问</td><td>可以修改</td><td>一定不能做更严格的限制（可以降低限制</td></tr>
-
+        <p><strong>重写(Override)</strong></p>
+<ol>
+<li>重写是子类对父类的允许访问的方法的实现过程进行重新编写, 返回值和形参都不能改变。即<strong>外壳不变，核心重写</strong>！</li>
+<li>重写的好处在于子类可以根据需要，定义特定于自己的行为。 也就是说子类能够根据需要实现父类的方法。</li>
+<li>重写方法不能抛出新的检查异常或者比被重写方法申明更加宽泛的异常。例如： 父类的一个方法申明了一个检查异常 IOException，但是在重写这个方法的时候不能抛出 Exception 异常，因为 Exception 是 IOException 的父类，只能抛出 IOException 的子类异常。</li>
+</ol>
+<p>在面向对象原则里，重写意味着可以重写任何现有方法。实例如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>&#123;</div><div class="line">      System.out.println(<span class="string">"动物可以移动"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>&#123;</div><div class="line">      System.out.println(<span class="string">"狗可以跑和走"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDog</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</div><div class="line">      Animal a = <span class="keyword">new</span> Animal(); <span class="comment">// Animal 对象</span></div><div class="line">      Animal b = <span class="keyword">new</span> Dog(); <span class="comment">// Dog 对象</span></div><div class="line"> </div><div class="line">      a.move();<span class="comment">// 执行 Animal 类的方法</span></div><div class="line"> </div><div class="line">      b.move();<span class="comment">//执行 Dog 类的方法</span></div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>以上实例编译运行结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">动物可以移动</div><div class="line">狗可以跑和走</div></pre></td></tr></table></figure></p>
+<p>在上面的例子中可以看到，尽管b属于Animal类型，但是它运行的是Dog类的move方法。<br>这是由于在编译阶段，只是检查参数的引用类型。<br>然而在运行时，Java虚拟机(JVM)指定对象的类型并且运行该对象的方法。<br>因此在上面的例子中，之所以能编译成功，是因为Animal类中存在move方法，然而运行时，运行的是特定对象的方法。<br>思考以下例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>&#123;</div><div class="line">      System.out.println(<span class="string">"动物可以移动"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>&#123;</div><div class="line">      System.out.println(<span class="string">"狗可以跑和走"</span>);</div><div class="line">   &#125;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bark</span><span class="params">()</span></span>&#123;</div><div class="line">      System.out.println(<span class="string">"狗可以吠叫"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDog</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</div><div class="line">      Animal a = <span class="keyword">new</span> Animal(); <span class="comment">// Animal 对象</span></div><div class="line">      Animal b = <span class="keyword">new</span> Dog(); <span class="comment">// Dog 对象</span></div><div class="line"> </div><div class="line">      a.move();<span class="comment">// 执行 Animal 类的方法</span></div><div class="line">      b.move();<span class="comment">//执行 Dog 类的方法</span></div><div class="line">      b.bark();</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>以上实例编译运行结果如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">TestDog.java:<span class="number">30</span>: cannot find symbol</div><div class="line">symbol  : <span class="function">method <span class="title">bark</span><span class="params">()</span></span></div><div class="line">location: class Animal</div><div class="line">                b.<span class="title">bark</span><span class="params">()</span>;</div><div class="line">                 ^</div></pre></td></tr></table></figure></p>
+<p>该程序将抛出一个编译错误，因为b的引用类型Animal没有bark方法。</p>
+<hr>
+<p><strong>方法的重写规则</strong></p>
+<ul>
+<li>参数列表必须完全与被重写方法的相同；</li>
+<li>返回类型必须完全与被重写方法的返回类型相同；</li>
+<li>访问权限不能比父类中被重写的方法的访问权限更低。例如：如果父类的一个方法被声明为public，那么在子类中重写该方法就不能声明为protected。</li>
+<li>父类的成员方法只能被它的子类重写。</li>
+<li>声明为final的方法不能被重写。</li>
+<li>声明为static的方法不能被重写，但是能够被再次声明。</li>
+<li>子类和父类在同一个包中，那么子类可以重写父类所有方法，除了声明为private和final的方法。</li>
+<li>子类和父类不在同一个包中，那么子类只能够重写父类的声明为public和protected的非final方法。</li>
+<li>重写的方法能够抛出任何非强制异常，无论被重写的方法是否抛出异常。但是，重写的方法不能抛出新的强制性异常，或者比被重写方法声明的更广泛的强制性异常，反之则可以。</li>
+<li>构造方法不能被重写。</li>
+<li>如果不能继承一个方法，则不能重写这个方法。</li>
+</ul>
+<hr>
+<p><strong>Super</strong>关键字的使用<br>当需要在子类中调用父类的被重写方法时，要使用super关键字。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>&#123;</div><div class="line">      System.out.println(<span class="string">"动物可以移动"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>&#123;</div><div class="line">      <span class="keyword">super</span>.move(); <span class="comment">// 应用super类的方法</span></div><div class="line">      System.out.println(<span class="string">"狗可以跑和走"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDog</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</div><div class="line"> </div><div class="line">      Animal b = <span class="keyword">new</span> Dog(); <span class="comment">// Dog 对象</span></div><div class="line">      b.move(); <span class="comment">//执行 Dog类的方法</span></div><div class="line"> </div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以上实例编译运行结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">动物可以移动</div><div class="line">狗可以跑和走</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>重载(Overload)</strong></p>
+<p><strong>重载(overloading)</strong> 是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同。</p>
+<ul>
+<li>每个重载的方法（或者构造函数）都必须有一个独一无二的参数类型列表。</li>
+<li>最常用的地方就是构造器的重载。</li>
+</ul>
+<p><strong>重载规则</strong></p>
+<ol>
+<li>被重载的方法必须改变参数列表(参数个数或类型或顺序不一样)；</li>
+<li>被重载的方法可以改变返回类型；</li>
+<li>被重载的方法可以改变访问修饰符；</li>
+<li>被重载的方法可以声明新的或更广的检查异常；</li>
+<li>方法能够在同一个类中或者在一个子类中被重载。</li>
+</ol>
+<blockquote>
+<p>注意: 无法以返回值类型作为重载函数的区分标准。</p>
+</blockquote>
+<p>实例:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Overloading</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">test</span><span class="params">()</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"test1"</span>);</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"test2"</span>);</div><div class="line">    &#125;   </div><div class="line"> </div><div class="line">    <span class="comment">//以下两个参数类型顺序不同</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">test</span><span class="params">(<span class="keyword">int</span> a,String s)</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"test3"</span>);</div><div class="line">        <span class="keyword">return</span> <span class="string">"returntest3"</span>;</div><div class="line">    &#125;   </div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">test</span><span class="params">(String s,<span class="keyword">int</span> a)</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"test4"</span>);</div><div class="line">        <span class="keyword">return</span> <span class="string">"returntest4"</span>;</div><div class="line">    &#125;   </div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">        Overloading o = <span class="keyword">new</span> Overloading();</div><div class="line">        System.out.println(o.test());</div><div class="line">        o.test(<span class="number">1</span>);</div><div class="line">        System.out.println(o.test(<span class="number">1</span>,<span class="string">"test3"</span>));</div><div class="line">        System.out.println(o.test(<span class="string">"test4"</span>,<span class="number">1</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>重载和重写的区别：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">区别点</th>
+<th style="text-align:right">重载方法</th>
+<th style="text-align:center">重写方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">参数列表</td>
+<td style="text-align:right">必须修改</td>
+<td style="text-align:center">一定不能修改</td>
+</tr>
+<tr>
+<td style="text-align:left">返回类型</td>
+<td style="text-align:right">可以修改</td>
+<td style="text-align:center">一定不能修改</td>
+</tr>
+<tr>
+<td style="text-align:left">异常</td>
+<td style="text-align:right">可以修改</td>
+<td style="text-align:center">可以减少或删除，一定不能抛出新的或者更广的异常</td>
+</tr>
+<tr>
+<td style="text-align:left">访问</td>
+<td style="text-align:right">可以修改</td>
+<td style="text-align:center">一定不能做更严格的限制（可以降低限制）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>总结</strong><br>  方法的重写(Overriding)和重载(Overloading)是java多态性的不同表现，重写是父类与子类之间多态性的一种表现，重载是一类中多态性的一种表现。</p>
+<p>本文摘自<a href="http://www.runoob.com/java/java-override-overload.html" target="_blank" rel="external">菜鸟教程</a>,各种语言入门挺不错的。</p>
 
       
 
