@@ -6,30 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//suny.live">
-  <title>Java中重写(Override)与重载(Overload)的区别 | M suny</title>
+  <title>软件设计模式之-单例模式 | M suny</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="重写(Override)
+  <meta name="description" content="什么是单例模式？
 
-重写是子类对父类的允许访问的方法的实现过程进行重新编写, 返回值和形参都不能改变。即外壳不变，核心重写！
-重写的好处在于子类可以根据需要，定义特定于自己的行为。 也就是说子类能够根据需要实现父类的方法。
-重写方法不能抛出新的检查异常或者比被重写方法申明更加宽泛的异常。例如： 父类的一个方法申明了一个检查异常 IOException，但是在重写这个方法的时候不能抛出 Ex">
+123456789单利模式：保证一个类仅有一个实例，并提供一个访问它的全局访问点。特点：（1）在任何情况下，单例类永远只有一个实例存在（2）单例需要有能力为整个系统提供这一唯一实例实际生活中的应用：   在计算机系统中，线程池、缓存、日志对象、对话框、打印机、显卡的驱动程序对象常被设计成单例。这些应用都或多或少具有资源管理器的功能。每台计算机可以有若干个打印机，但只能有一个P">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中重写(Override)与重载(Overload)的区别">
-<meta property="og:url" content="//suny.live/2017/03/19/Java中重写-Override-与重载-Overload-的区别/index.html">
+<meta property="og:title" content="软件设计模式之-单例模式">
+<meta property="og:url" content="//suny.live/2017/03/26/软件设计模式之-单例模式/index.html">
 <meta property="og:site_name" content="M suny">
-<meta property="og:description" content="重写(Override)
+<meta property="og:description" content="什么是单例模式？
 
-重写是子类对父类的允许访问的方法的实现过程进行重新编写, 返回值和形参都不能改变。即外壳不变，核心重写！
-重写的好处在于子类可以根据需要，定义特定于自己的行为。 也就是说子类能够根据需要实现父类的方法。
-重写方法不能抛出新的检查异常或者比被重写方法申明更加宽泛的异常。例如： 父类的一个方法申明了一个检查异常 IOException，但是在重写这个方法的时候不能抛出 Ex">
-<meta property="og:updated_time" content="2017-03-30T13:59:35.000Z">
+123456789单利模式：保证一个类仅有一个实例，并提供一个访问它的全局访问点。特点：（1）在任何情况下，单例类永远只有一个实例存在（2）单例需要有能力为整个系统提供这一唯一实例实际生活中的应用：   在计算机系统中，线程池、缓存、日志对象、对话框、打印机、显卡的驱动程序对象常被设计成单例。这些应用都或多或少具有资源管理器的功能。每台计算机可以有若干个打印机，但只能有一个P">
+<meta property="og:updated_time" content="2017-03-30T14:14:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java中重写(Override)与重载(Overload)的区别">
-<meta name="twitter:description" content="重写(Override)
+<meta name="twitter:title" content="软件设计模式之-单例模式">
+<meta name="twitter:description" content="什么是单例模式？
 
-重写是子类对父类的允许访问的方法的实现过程进行重新编写, 返回值和形参都不能改变。即外壳不变，核心重写！
-重写的好处在于子类可以根据需要，定义特定于自己的行为。 也就是说子类能够根据需要实现父类的方法。
-重写方法不能抛出新的检查异常或者比被重写方法申明更加宽泛的异常。例如： 父类的一个方法申明了一个检查异常 IOException，但是在重写这个方法的时候不能抛出 Ex">
+123456789单利模式：保证一个类仅有一个实例，并提供一个访问它的全局访问点。特点：（1）在任何情况下，单例类永远只有一个实例存在（2）单例需要有能力为整个系统提供这一唯一实例实际生活中的应用：   在计算机系统中，线程池、缓存、日志对象、对话框、打印机、显卡的驱动程序对象常被设计成单例。这些应用都或多或少具有资源管理器的功能。每台计算机可以有若干个打印机，但只能有一个P">
   
     <link rel="alternative" href="/atom.xml" title="M suny" type="application/atom+xml">
   
@@ -181,113 +175,38 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java中重写-Override-与重载-Overload-的区别" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-软件设计模式之-单例模式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java中重写(Override)与重载(Overload)的区别
+      软件设计模式之-单例模式
     </h1>
   
 
         
-        <a href="/2017/03/19/Java中重写-Override-与重载-Overload-的区别/" class="archive-article-date">
-  	<time datetime="2017-03-19T08:56:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-19</time>
+        <a href="/2017/03/26/软件设计模式之-单例模式/" class="archive-article-date">
+  	<time datetime="2017-03-26T08:51:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>重写(Override)</strong></p>
-<ol>
-<li>重写是子类对父类的允许访问的方法的实现过程进行重新编写, 返回值和形参都不能改变。即<strong>外壳不变，核心重写</strong>！</li>
-<li>重写的好处在于子类可以根据需要，定义特定于自己的行为。 也就是说子类能够根据需要实现父类的方法。</li>
-<li>重写方法不能抛出新的检查异常或者比被重写方法申明更加宽泛的异常。例如： 父类的一个方法申明了一个检查异常 IOException，但是在重写这个方法的时候不能抛出 Exception 异常，因为 Exception 是 IOException 的父类，只能抛出 IOException 的子类异常。</li>
-</ol>
-<p>在面向对象原则里，重写意味着可以重写任何现有方法。实例如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>&#123;</div><div class="line">      System.out.println(<span class="string">"动物可以移动"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>&#123;</div><div class="line">      System.out.println(<span class="string">"狗可以跑和走"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDog</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</div><div class="line">      Animal a = <span class="keyword">new</span> Animal(); <span class="comment">// Animal 对象</span></div><div class="line">      Animal b = <span class="keyword">new</span> Dog(); <span class="comment">// Dog 对象</span></div><div class="line"> </div><div class="line">      a.move();<span class="comment">// 执行 Animal 类的方法</span></div><div class="line"> </div><div class="line">      b.move();<span class="comment">//执行 Dog 类的方法</span></div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>以上实例编译运行结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">动物可以移动</div><div class="line">狗可以跑和走</div></pre></td></tr></table></figure></p>
-<p>在上面的例子中可以看到，尽管b属于Animal类型，但是它运行的是Dog类的move方法。<br>这是由于在编译阶段，只是检查参数的引用类型。<br>然而在运行时，Java虚拟机(JVM)指定对象的类型并且运行该对象的方法。<br>因此在上面的例子中，之所以能编译成功，是因为Animal类中存在move方法，然而运行时，运行的是特定对象的方法。</p>
-<a id="more"></a>
-<p>思考以下例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>&#123;</div><div class="line">      System.out.println(<span class="string">"动物可以移动"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>&#123;</div><div class="line">      System.out.println(<span class="string">"狗可以跑和走"</span>);</div><div class="line">   &#125;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bark</span><span class="params">()</span></span>&#123;</div><div class="line">      System.out.println(<span class="string">"狗可以吠叫"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDog</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</div><div class="line">      Animal a = <span class="keyword">new</span> Animal(); <span class="comment">// Animal 对象</span></div><div class="line">      Animal b = <span class="keyword">new</span> Dog(); <span class="comment">// Dog 对象</span></div><div class="line"> </div><div class="line">      a.move();<span class="comment">// 执行 Animal 类的方法</span></div><div class="line">      b.move();<span class="comment">//执行 Dog 类的方法</span></div><div class="line">      b.bark();</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>以上实例编译运行结果如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">TestDog.java:<span class="number">30</span>: cannot find symbol</div><div class="line">symbol  : <span class="function">method <span class="title">bark</span><span class="params">()</span></span></div><div class="line">location: class Animal</div><div class="line">                b.<span class="title">bark</span><span class="params">()</span>;</div><div class="line">                 ^</div></pre></td></tr></table></figure></p>
-<p>该程序将抛出一个编译错误，因为b的引用类型Animal没有bark方法。</p>
-<hr>
-<p><strong>方法的重写规则</strong></p>
-<ul>
-<li>参数列表必须完全与被重写方法的相同；</li>
-<li>返回类型必须完全与被重写方法的返回类型相同；</li>
-<li>访问权限不能比父类中被重写的方法的访问权限更低。例如：如果父类的一个方法被声明为public，那么在子类中重写该方法就不能声明为protected。</li>
-<li>父类的成员方法只能被它的子类重写。</li>
-<li>声明为final的方法不能被重写。</li>
-<li>声明为static的方法不能被重写，但是能够被再次声明。</li>
-<li>子类和父类在同一个包中，那么子类可以重写父类所有方法，除了声明为private和final的方法。</li>
-<li>子类和父类不在同一个包中，那么子类只能够重写父类的声明为public和protected的非final方法。</li>
-<li>重写的方法能够抛出任何非强制异常，无论被重写的方法是否抛出异常。但是，重写的方法不能抛出新的强制性异常，或者比被重写方法声明的更广泛的强制性异常，反之则可以。</li>
-<li>构造方法不能被重写。</li>
-<li>如果不能继承一个方法，则不能重写这个方法。</li>
-</ul>
-<hr>
-<p><strong>Super</strong>关键字的使用<br>当需要在子类中调用父类的被重写方法时，要使用super关键字。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>&#123;</div><div class="line">      System.out.println(<span class="string">"动物可以移动"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>&#123;</div><div class="line">      <span class="keyword">super</span>.move(); <span class="comment">// 应用super类的方法</span></div><div class="line">      System.out.println(<span class="string">"狗可以跑和走"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDog</span></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</div><div class="line"> </div><div class="line">      Animal b = <span class="keyword">new</span> Dog(); <span class="comment">// Dog 对象</span></div><div class="line">      b.move(); <span class="comment">//执行 Dog类的方法</span></div><div class="line"> </div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>以上实例编译运行结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">动物可以移动</div><div class="line">狗可以跑和走</div></pre></td></tr></table></figure></p>
-<hr>
-<p><strong>重载(Overload)</strong></p>
-<p><strong>重载(overloading)</strong> 是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同。</p>
-<ul>
-<li>每个重载的方法（或者构造函数）都必须有一个独一无二的参数类型列表。</li>
-<li>最常用的地方就是构造器的重载。</li>
-</ul>
-<p><strong>重载规则</strong></p>
-<ol>
-<li>被重载的方法必须改变参数列表(参数个数或类型或顺序不一样)；</li>
-<li>被重载的方法可以改变返回类型；</li>
-<li>被重载的方法可以改变访问修饰符；</li>
-<li>被重载的方法可以声明新的或更广的检查异常；</li>
-<li>方法能够在同一个类中或者在一个子类中被重载。</li>
-</ol>
-<blockquote>
-<p>注意: 无法以返回值类型作为重载函数的区分标准。</p>
+        <blockquote>
+<p>什么是单例模式？</p>
 </blockquote>
-<p>实例:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Overloading</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">test</span><span class="params">()</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"test1"</span>);</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"test2"</span>);</div><div class="line">    &#125;   </div><div class="line"> </div><div class="line">    <span class="comment">//以下两个参数类型顺序不同</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">test</span><span class="params">(<span class="keyword">int</span> a,String s)</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"test3"</span>);</div><div class="line">        <span class="keyword">return</span> <span class="string">"returntest3"</span>;</div><div class="line">    &#125;   </div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">test</span><span class="params">(String s,<span class="keyword">int</span> a)</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"test4"</span>);</div><div class="line">        <span class="keyword">return</span> <span class="string">"returntest4"</span>;</div><div class="line">    &#125;   </div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">        Overloading o = <span class="keyword">new</span> Overloading();</div><div class="line">        System.out.println(o.test());</div><div class="line">        o.test(<span class="number">1</span>);</div><div class="line">        System.out.println(o.test(<span class="number">1</span>,<span class="string">"test3"</span>));</div><div class="line">        System.out.println(o.test(<span class="string">"test4"</span>,<span class="number">1</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>重载和重写的区别：</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">区别点</th>
-<th style="text-align:right">重载方法</th>
-<th style="text-align:center">重写方法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">参数列表</td>
-<td style="text-align:right">必须修改</td>
-<td style="text-align:center">一定不能修改</td>
-</tr>
-<tr>
-<td style="text-align:left">返回类型</td>
-<td style="text-align:right">可以修改</td>
-<td style="text-align:center">一定不能修改</td>
-</tr>
-<tr>
-<td style="text-align:left">异常</td>
-<td style="text-align:right">可以修改</td>
-<td style="text-align:center">可以减少或删除，一定不能抛出新的或者更广的异常</td>
-</tr>
-<tr>
-<td style="text-align:left">访问</td>
-<td style="text-align:right">可以修改</td>
-<td style="text-align:center">一定不能做更严格的限制（可以降低限制）</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p><strong>总结</strong><br>  方法的重写(Overriding)和重载(Overloading)是java多态性的不同表现，重写是父类与子类之间多态性的一种表现，重载是一类中多态性的一种表现。</p>
-<p>本文摘自<a href="http://www.runoob.com/java/java-override-overload.html" target="_blank" rel="external">菜鸟教程</a>,各种语言入门挺不错的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">单利模式：保证一个类仅有一个实例，并提供一个访问它的全局访问点。</div><div class="line">特点：</div><div class="line">（1）在任何情况下，单例类永远只有一个实例存在</div><div class="line">（2）单例需要有能力为整个系统提供这一唯一实例</div><div class="line"></div><div class="line">实际生活中的应用：</div><div class="line">   在计算机系统中，线程池、缓存、日志对象、对话框、打印机、显卡的驱动程序对象常被设计成单例。这些应用都或多或少具有资源管理器的功能。每台计算机可以有若干个打印机，但只能有一个Printer Spooler，以避免两个打印作业同时输出到打印机中。每台计算机可以有若干通信端口，系统应当集中管理这些通信端口，以避免一个通信端口同时被两个请求同时调用。总之，选择单例模式就是为了避免不一致状态，避免政出多头。</div><div class="line"></div><div class="line">正是由于这个特点，单例对象通常作为程序中的存放配置信息的载体，因为它能保证其他对象读到一致的信息。例如在某个服务器程序中，该服务器的配置信息可能存放在数据库或文件中，这些配置数据由某个单例对象统一读取，服务进程中的其他对象如果要获取这些配置信息，只需访问该单例对象即可。这种方式极大地简化了在复杂环境 下，尤其是多线程环境下的配置管理，但是随着应用场景的不同，也可能带来一些同步问题。</div></pre></td></tr></table></figure>
+<h4 id="单例模式常见的实现方式"><a href="#单例模式常见的实现方式" class="headerlink" title="单例模式常见的实现方式"></a>单例模式常见的实现方式</h4><p><strong>饿汉模式：</strong>是指在方法调用前就创建实例，比较饥渴<br><strong>优点：</strong>饿汉模式实现的单例能保证是线程安全的。<br><strong>缺点：</strong>类加载的时候就需要实例化，提前占用系统资源<br>以下是”饿汉模式”的实现代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.suny.singletom;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 饿汉式单例模式的实现：方法调用前实例</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySingleton</span> </span>&#123;</div><div class="line">	</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> MySingleton instance= <span class="keyword">new</span> MySingleton();</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MySingleton</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> MySingleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> instance;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>以下是多线程中调用”饿汉式”实现的单例<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.suny.singletom;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</div><div class="line">	<span class="comment">//负责打印单例被调用时的hashCode</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">		System.out.println(MySingleton.getInstance().hashCode());</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		MyThread[] mts = <span class="keyword">new</span> MyThread[<span class="number">5</span>];<span class="comment">//创建5个线程去调用单例的实现</span></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;mts.length;i++)&#123;</div><div class="line">			mts[i] = <span class="keyword">new</span> MyThread();</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;mts.length;j++)&#123;</div><div class="line">			mts[j].start();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>以下是在多线程中调用”饿汉式”单例的运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">493057941</div><div class="line">493057941</div><div class="line">493057941</div><div class="line">493057941</div><div class="line">493057941</div></pre></td></tr></table></figure></p>
+<p>从运行结果中可以看出，hashCode一致，多线程中调用的是同一个单例的对象，线程安全。</p>
+<p>#####懒汉模式<br><strong>懒汉模式：</strong>是指在被调用时才去实例化对象，不紧不慢<br><strong>优点：</strong>被调用时才去创建实例，不会造成系统资源占用<br><strong>缺点：</strong>不能保证单例对象的线程安全，在多线程的系统中线程非安全，需要Double check locking(双重锁检查)来解决可能存在的线程安全问题</p>
+<p>“懒汉式”单例实现如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.suny.singletom;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySingletonLazy</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> MySingletonLazy instance = <span class="keyword">null</span>;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="title">MySingletonLazy</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">	</div><div class="line">	<span class="comment">//"懒汉式"单例实现</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> MySingletonLazy <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(<span class="keyword">null</span> == instance)&#123;</div><div class="line">			instance = <span class="keyword">new</span> MySingletonLazy();</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> instance;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在多线程中运行”懒汉式”单例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
 
       
 
@@ -388,7 +307,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://suny.live/2017/03/19/Java中重写-Override-与重载-Overload-的区别/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://suny.live/2017/03/26/软件设计模式之-单例模式/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -402,18 +321,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/03/26/软件设计模式之-单例模式/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          软件设计模式之-单例模式
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/03/16/接下来的路/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">接下来的路</div>
+    <a href="/2017/03/19/Java中重写-Override-与重载-Overload-的区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中重写(Override)与重载(Overload)的区别</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -427,7 +337,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Java中重写-Override-与重载-Overload-的区别" data-title="Java中重写(Override)与重载(Overload)的区别" data-url="//suny.live/2017/03/19/Java中重写-Override-与重载-Overload-的区别/"></div>
+	<div class="ds-thread" data-thread-key="软件设计模式之-单例模式" data-title="软件设计模式之-单例模式" data-url="//suny.live/2017/03/26/软件设计模式之-单例模式/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
