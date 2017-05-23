@@ -180,6 +180,70 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-bash使用ssh实现免密码登陆" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/23/bash使用ssh实现免密码登陆/">bash使用ssh实现免密码登陆</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/23/bash使用ssh实现免密码登陆/" class="archive-article-date">
+  	<time datetime="2016-08-23T06:57:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="SSH免密码登录"><a href="#SSH免密码登录" class="headerlink" title="SSH免密码登录"></a>SSH免密码登录</h3><p>1 打开一个文件，如叫pf<br>2 写入下面内容，把yu.sun 和 <em>*</em> 换成自己名字和密码。<br>3 chmod 740 pf<br>4 ./pf<br>脚本如下，例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/expect -f</span></div><div class="line"><span class="comment">#auto ssh login</span></div><div class="line"><span class="built_in">set</span> timeout 30</div><div class="line">spawn ssh yu.sun@127.0.0.1</div><div class="line">expect <span class="string">"password:"</span></div><div class="line">send <span class="string">"***\r"</span></div><div class="line">interact</div></pre></td></tr></table></figure></p>
+<hr>
+<p>相关资料： <a href="http://www.ahlinux.com/shell/5797.html" target="_blank" rel="external">http://www.ahlinux.com/shell/5797.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/23/bash使用ssh实现免密码登陆/">show more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-11年母校的足球场" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -336,11 +400,11 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生计</a>
+                <a href="javascript:void(0)" class="js-tag color3">瞬间</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">瞬间</a>
+                <a href="javascript:void(0)" class="js-tag color3">生计</a>
               </li>
              
               <li class="article-tag-list-item">
