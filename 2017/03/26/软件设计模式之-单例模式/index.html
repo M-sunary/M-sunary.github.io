@@ -18,7 +18,7 @@
 <meta property="og:description" content="什么是单例模式？
 
 123456789单利模式：保证一个类仅有一个实例，并提供一个访问它的全局访问点。特点：（1）在任何情况下，单例类永远只有一个实例存在（2）单例需要有能力为整个系统提供这一唯一实例实际生活中的应用：   在计算机系统中，线程池、缓存、日志对象、对话框、打印机、显卡的驱动程序对象常被设计成单例。这些应用都或多或少具有资源管理器的功能。每台计算机可以有若干个打印机，但只能有一个P">
-<meta property="og:updated_time" content="2017-03-30T14:53:08.000Z">
+<meta property="og:updated_time" content="2017-11-27T03:24:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="软件设计模式之-单例模式">
 <meta name="twitter:description" content="什么是单例模式？
@@ -82,6 +82,8 @@ var _hmt = _hmt || [];
 	        
 				<li><a href="/tags/瞬间/">瞬间</a></li>
 	        
+				<li><a href="/tags/音乐/">音乐</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -144,6 +146,8 @@ var _hmt = _hmt || [];
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -164,13 +168,15 @@ var _hmt = _hmt || [];
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/tags/生计/">生计</a></li>
+					<li style="width: 20%"><a href="/tags/生计/">生计</a></li>
 		        
-					<li style="width: 25%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 20%"><a href="/tags/随笔/">随笔</a></li>
 		        
-					<li style="width: 25%"><a href="/tags/瞬间/">瞬间</a></li>
+					<li style="width: 20%"><a href="/tags/瞬间/">瞬间</a></li>
+		        
+					<li style="width: 20%"><a href="/tags/音乐/">音乐</a></li>
 		        
 				</ul>
 			</nav>
@@ -214,7 +220,7 @@ var _hmt = _hmt || [];
 <p>以下是多线程中调用”饿汉式”实现的单例<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.suny.singletom;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</div><div class="line">	<span class="comment">//负责打印单例被调用时的hashCode</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">		System.out.println(MySingleton.getInstance().hashCode());</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		MyThread[] mts = <span class="keyword">new</span> MyThread[<span class="number">5</span>];<span class="comment">//创建5个线程去调用单例的实现</span></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;mts.length;i++)&#123;</div><div class="line">			mts[i] = <span class="keyword">new</span> MyThread();</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;mts.length;j++)&#123;</div><div class="line">			mts[j].start();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>以下是在多线程中调用”饿汉式”单例的运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">493057941</div><div class="line">493057941</div><div class="line">493057941</div><div class="line">493057941</div><div class="line">493057941</div></pre></td></tr></table></figure></p>
 <p>从运行结果中可以看出，hashCode一致，多线程中调用的是同一个单例的对象，线程安全。</p>
-<p>#####懒汉模式<br><strong>懒汉模式：</strong>是指在被调用时才去实例化对象，不紧不慢<br><strong>优点：</strong>被调用时才去创建实例，不会造成系统资源占用<br><strong>缺点：</strong>不能保证单例对象的线程安全，在多线程的系统中线程非安全，需要Double check locking(双重锁检查)来解决可能存在的线程安全问题</p>
+<h5 id="懒汉模式"><a href="#懒汉模式" class="headerlink" title="懒汉模式"></a>懒汉模式</h5><p><strong>懒汉模式：</strong>是指在被调用时才去实例化对象，不紧不慢<br><strong>优点：</strong>被调用时才去创建实例，不会造成系统资源占用<br><strong>缺点：</strong>不能保证单例对象的线程安全，在多线程的系统中线程非安全，需要Double check locking(双重锁检查)来解决可能存在的线程安全问题</p>
 <p>“懒汉式”单例实现如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.suny.singletom;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySingletonLazy</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> MySingletonLazy instance = <span class="keyword">null</span>;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="title">MySingletonLazy</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">	</div><div class="line">	<span class="comment">//"懒汉式"单例实现</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> MySingletonLazy <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(<span class="keyword">null</span> == instance)&#123;</div><div class="line">			instance = <span class="keyword">new</span> MySingletonLazy();</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> instance;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>在多线程中运行”懒汉式”单例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
 
@@ -341,8 +347,8 @@ var _hmt = _hmt || [];
     </a>
   
   
-    <a href="/2017/03/22/Java中的包装类/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java中的包装类</div>
+    <a href="/2017/03/19/Java中重写-Override-与重载-Overload-的区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中重写(Override)与重载(Overload)的区别</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -454,7 +460,23 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Music/奶茶</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">music/奶茶</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">音乐/奶茶</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">音乐</a>
               </li>
             
             <div class="clearfix"></div>
