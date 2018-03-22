@@ -25,7 +25,7 @@
 <meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg">
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png">
 <meta property="og:image" content="http://nvie.com/img/git-model@2x.png">
-<meta property="og:updated_time" content="2018-03-22T14:42:29.255Z">
+<meta property="og:updated_time" content="2018-03-22T15:19:03.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git版本控制系统简介">
 <meta name="twitter:description" content="Git是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。   linus：The stupid content tracker.
@@ -223,24 +223,41 @@ var _hmt = _hmt || [];
 <p>集中式版本控制系统 vs 分布式版本控制系统</p>
 </blockquote>
 <ul>
-<li>集中式版本控制系统</li>
+<li>集中式版本控制系统<br><img src="http://wx3.sinaimg.cn/mw690/a5984724gy1fl1uvcd48wj20bf0890sp.jpg" alt="image"></li>
+<li>集中式版本控制系统，版本库集中存放在中央服务器(容灾性差)</li>
+<li>对于网络的依赖较强</li>
+<li>业务数据安全性高</li>
 </ul>
-<p><img src="http://wx3.sinaimg.cn/mw690/a5984724gy1fl1uvcd48wj20bf0890sp.jpg" alt="image"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- 集中式版本控制系统，版本库集中存放在中央服务器(容灾性差)</div><div class="line">- 对于网络的依赖较强</div><div class="line">- 业务数据安全性高</div></pre></td></tr></table></figure>
 <ul>
-<li>分布式版本控制系统</li>
+<li>分布式版本控制系统<br><img src="http://wx2.sinaimg.cn/mw690/a5984724gy1fl1uvc76rrj20e00c1wen.jpg" alt="image"></li>
+<li>分布式版本控制系统没有中央服务器的概念，每个开发者都拥有完整的版本库(容灾性强)</li>
+<li>代码保密性差</li>
+<li>以开发者个人为主体，更符合Geek精神</li>
 </ul>
-<p><img src="http://wx2.sinaimg.cn/mw690/a5984724gy1fl1uvc76rrj20e00c1wen.jpg" alt="image"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- 分布式版本控制系统没有中央服务器的概念，每个开发者都拥有完整的版本库(容灾性强)</div><div class="line">- 代码保密性差</div><div class="line">- 以开发者个人为主体，更符合Geek精神</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>Git工作区、暂存区和版本库的概念</p>
 </blockquote>
 <p><img src="http://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg" alt="image"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; 工作区：就是你在电脑里能看到的目录。</div><div class="line"></div><div class="line">&gt; 暂存区：英文叫stage, 或index。一般存放在 &quot;.git目录下&quot; 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</div><div class="line"></div><div class="line">&gt; 版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</div></pre></td></tr></table></figure>
+<ul>
+<li><p>工作区：就是你在电脑里能看到的目录。</p>
+</li>
+<li><p>暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</p>
+</li>
+<li><p>版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</p>
+</li>
+</ul>
 <blockquote>
 <p>git基本操作</p>
 </blockquote>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png" alt="image"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; Workspace：工作区</div><div class="line">&gt; Index / Stage：暂存区</div><div class="line">&gt; Repository：仓库区（或本地仓库）</div><div class="line">&gt; Remote：远程仓库</div></pre></td></tr></table></figure></p>
-<p> <strong><a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="external">git常用命令清单</a></strong></p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png" alt="image"></p>
+<ul>
+<li>Workspace：工作区</li>
+<li>Index / Stage：暂存区</li>
+<li>Repository：仓库区（或本地仓库）</li>
+<li><p>Remote：远程仓库</p>
+<p><strong><a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="external">git常用命令清单</a></strong></p>
+</li>
+</ul>
 <blockquote>
 <p>Git flow</p>
 </blockquote>
